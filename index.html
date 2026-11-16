@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Памятка: Математические модели (5 класс, Петерсон)</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            background: #fdf8ed;
+            margin: 0;
+            padding: 30px 20px;
+            color: #2c3e50;
+            line-height: 1.75;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(52, 101, 164, 0.10);
+            padding: 40px 45px;
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #2e5c8a;
+            border-bottom: 4px solid #ffd166;
+            padding-bottom: 12px;
+            margin-top: 0;
+            line-height: 1.3;
+        }
+        .block {
+            margin-bottom: 45px;
+            border-left: 6px solid #7fb3d5;
+            background: #f7fbff;
+            border-radius: 0 16px 16px 0;
+            padding: 20px 26px;
+            box-shadow: 0 2px 8px rgba(52, 101, 164, 0.04);
+        }
+        .block-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2e5c8a;
+            margin-top: 0;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            display: inline-block;
+            background: #ffd166;
+            color: #4a3a00;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+        .example-box {
+            background: #ffffff;
+            border: 1px solid #d6e4f0;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 18px;
+        }
+        .example-box p {
+            margin: 8px 0;
+            font-size: 1rem;
+        }
+        .formula {
+            font-family: Tahoma, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #2e5c8a;
+            margin: 12px 0;
+            overflow-x: auto;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+        .math {
+            font-family: Tahoma, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color: #2e5c8a;
+            white-space: nowrap;
+            font-size: 1.05em;
+        }
+        .petersson-text {
+            margin-top: 14px;
+            background: #fffdf5;
+            border: 1px solid #f0e2b6;
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 1rem;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+        .petersson-text p {
+            margin: 10px 0;
+            text-indent: 0;
+        }
+        .math-line {
+            display: block;
+            margin: 4px 0 4px 24px;
+            font-family: Tahoma, Arial, sans-serif;
+            font-weight: 700;
+            color: #2e5c8a;
+            font-size: 1.05rem;
+        }
+
+        .model-label, .answer-label {
+            display: block;
+            margin-top: 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #b07d1a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .answer-label {
+            color: #2e7d52;
+        }
+
+        .scheme {
+            margin: 22px 0 12px;
+            padding: 14px 10px;
+            display: flex;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 10px;
+        }
+        .scheme-svg {
+            max-width: 100%;
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .table-wrap {
+            margin: 18px 0 12px;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .math-table {
+            border-collapse: collapse;
+            font-size: 1rem;
+            min-width: 420px;
+            background: #ffffff;
+            border: 1.5px solid #7fb3d5;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+        .math-table th {
+            background: #e6f0fa;
+            border: 1.5px solid #7fb3d5;
+            padding: 8px 16px;
+            font-weight: 700;
+            color: #2e5c8a;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .math-table td {
+            border: 1.5px solid #7fb3d5;
+            padding: 8px 16px;
+            text-align: center;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+        .math-table td.formula-cell {
+            font-family: Tahoma, Arial, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            background: #f7fbff;
+            color: #2e5c8a;
+        }
+
+        .etalon-wrap {
+            margin: 20px 0 10px;
+        }
+        .algorithm-frame {
+            border: 3px solid #ffd166;
+            border-radius: 18px;
+            padding: 14px 14px 10px;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(255, 209, 102, 0.15);
+        }
+        .algorithm-title {
+            text-align: center;
+            font-weight: 700;
+            color: #2e5c8a;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .alg-box {
+            background: #fff8e6;
+            border: 2px solid #f0c96a;
+            border-radius: 6px;
+            padding: 10px 16px;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            text-align: center;
+            line-height: 1.4;
+            margin: 0;
+        }
+        .alg-box.blue {
+            background: #e6f0fa;
+            border-color: #7fb3d5;
+        }
+        .alg-box.pink {
+            background: #fde8e8;
+            border-color: #f0a0a0;
+        }
+        .alg-box.green {
+            background: #e2f0e6;
+            border-color: #8bc34a;
+        }
+        .alg-arrow {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            line-height: 1;
+            margin: 2px 0;
+            font-weight: 700;
+        }
+        .alg-arrow::after {
+            content: "▼";
+            font-size: 0.9rem;
+        }
+
+        .alg-list {
+            background: #ffffff;
+            border: 2px solid #7fb3d5;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 18px 0;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+        .alg-list .alg-title {
+            font-weight: 700;
+            color: #2e5c8a;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .alg-list ol {
+            margin: 0;
+            padding-left: 22px;
+        }
+        .alg-list li {
+            margin-bottom: 6px;
+        }
+        .alg-list .rule {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #cbd5e1;
+        }
+
+        .task-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 16px;
+            border: 1px solid #d6e4f0;
+        }
+        .task-number {
+            font-weight: 700;
+            color: #4a7ab5;
+            margin-right: 8px;
+        }
+
+        details {
+            margin-top: 14px;
+            background: #f2f8fd;
+            border: 1px solid #d6e4f0;
+            border-radius: 10px;
+            padding: 4px 16px;
+        }
+        details summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #2e5c8a;
+            padding: 10px 0;
+            list-style: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details summary::before {
+            content: "▶ ";
+            font-size: 0.9em;
+            color: #7fb3d5;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        details[open] summary::before {
+            content: "▼ ";
+        }
+        details .spoiler-content {
+            padding: 6px 0 14px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px 18px; }
+            h1 { font-size: 1.5rem; }
+            .block { padding: 18px; }
+            .math-table { min-width: 320px; font-size: 0.85rem; }
+            .math-table th, .math-table td { padding: 6px 8px; }
+            .math-line { margin-left: 10px; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Математические модели — памятка для 5 класса</h1>
+
+    <!-- ========== ЗАДАЧА 1 ========== -->
+    <div class="block">
+        <div class="block-title"><span class="badge">Задача 1</span> Модель в виде выражения</div>
+        <div class="example-box">
+            <p><strong>Пример:</strong></p>
+            <p>Серёжа, Андрей и Денис принесли на выставку 120 почтовых марок. Серёжа принёс 25 марок, а Андрей — в 2 раза больше, чем Серёжа. Сколько марок принёс на выставку Денис?</p>
+
+            <div class="scheme">
+                <svg class="scheme-svg" width="520" height="115" viewBox="0 0 520 115" xmlns="http://www.w3.org/2000/svg">
+                    <text x="260" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">120</text>
+                    <path d="M 40 32 Q 40 22 55 20 Q 260 12 465 20 Q 480 22 480 32" fill="none" stroke="#577590" stroke-width="1.5"/>
+                    <line x1="40" y1="68" x2="480" y2="68" stroke="#577590" stroke-width="2"/>
+                    <line x1="40" y1="60" x2="40" y2="76" stroke="#577590" stroke-width="2"/>
+                    <line x1="180" y1="60" x2="180" y2="76" stroke="#577590" stroke-width="2"/>
+                    <line x1="340" y1="60" x2="340" y2="76" stroke="#577590" stroke-width="2"/>
+                    <line x1="480" y1="60" x2="480" y2="76" stroke="#577590" stroke-width="2"/>
+                    <text x="110" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">С.</text>
+                    <text x="110" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">25</text>
+                    <text x="260" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">А.</text>
+                    <text x="260" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">25 · 2</text>
+                    <text x="410" y="94" text-anchor="middle" font-size="14" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">Д.</text>
+                    <text x="410" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">?</text>
+                </svg>
+            </div>
+
+            <div class="petersson-text">
+                <p>Всего мальчики принесли <span class="math">120</span> марок.</p>
+                <p>Серёжа принёс <span class="math">25</span> марок, а Андрей — в 2 раза больше, то есть <span class="math">25 · 2</span> марок.</p>
+                <p>Тогда Денис принёс <span class="math">120 – (25 + 25 · 2)</span> марок.</p>
+                <p>Найдём значение выражения:</p>
+                <span class="math-line">25 · 2 = 50</span>
+                <span class="math-line">25 + 50 = 75</span>
+                <span class="math-line">120 – 75 = 45</span>
+                <p>Проверка: <span class="math">25 + 50 + 45 = 120</span> — верно.</p>
+            </div>
+            <span class="model-label">Математическая модель:</span>
+            <div class="formula">120 – (25 + 25 · 2)</div>
+            <span class="answer-label">Ответ:</span>
+            <p>Денис принёс на выставку <strong>45 марок</strong>.</p>
+        </div>
+
+        <div class="etalon-wrap">
+            <div class="algorithm-frame">
+                <div class="algorithm-title">Алгоритм построения математической модели<br>текстовых задач I типа</div>
+                <div class="alg-box">Внимательно прочитать условие и вопрос задачи</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Определить взаимосвязи между описанными в<br>ней величинами (если необходимо, использовать<br>формулы, схемы, таблицы)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Проверить соответствие единиц измерения величин<br>(при необходимости выполнить их преобразование)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Составить выражение, значение которого равно<br>значению искомой величины</div>
+            </div>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 1.1.</span> В школьной библиотеке всего 340 книг. Из них 120 книг о приключениях, книг о животных — на 50 меньше, чем о приключениях, а остальные книги — о космосе. Сколько книг о космосе в библиотеке?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <div class="scheme">
+                        <svg class="scheme-svg" width="560" height="115" viewBox="0 0 560 115" xmlns="http://www.w3.org/2000/svg">
+                            <text x="280" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">340</text>
+                            <path d="M 30 32 Q 30 22 45 20 Q 280 12 515 20 Q 530 22 530 32" fill="none" stroke="#577590" stroke-width="1.5"/>
+                            <line x1="30" y1="68" x2="530" y2="68" stroke="#577590" stroke-width="2"/>
+                            <line x1="30" y1="60" x2="30" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="180" y1="60" x2="180" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="330" y1="60" x2="330" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="530" y1="60" x2="530" y2="76" stroke="#577590" stroke-width="2"/>
+                            <text x="105" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">Приключения</text>
+                            <text x="105" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">120</text>
+                            <text x="255" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">Животные</text>
+                            <text x="255" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">120 – 50</text>
+                            <text x="430" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">Космос</text>
+                            <text x="430" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">?</text>
+                        </svg>
+                    </div>
+                    <p>Книг о животных: <span class="math">120 – 50 = 70</span>.</p>
+                    <p>Книги о приключениях и о животных вместе: <span class="math">120 + 70 = 190</span>.</p>
+                    <p>Книг о космосе:</p>
+                    <span class="math-line">340 – 190 = 150</span>
+                    <p>Проверка: <span class="math">120 + 70 + 150 = 340</span> — верно.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">340 – (120 + (120 – 50))</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>В библиотеке <strong>150 книг о космосе</strong>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 1.2.</span> На склад привезли 500 кг картофеля. В первый день увезли 120 кг, а во второй — в 3 раза больше, чем в первый. Сколько килограммов картофеля осталось на складе?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <div class="scheme">
+                        <svg class="scheme-svg" width="560" height="115" viewBox="0 0 560 115" xmlns="http://www.w3.org/2000/svg">
+                            <text x="280" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">500</text>
+                            <path d="M 30 32 Q 30 22 45 20 Q 280 12 515 20 Q 530 22 530 32" fill="none" stroke="#577590" stroke-width="1.5"/>
+                            <line x1="30" y1="68" x2="530" y2="68" stroke="#577590" stroke-width="2"/>
+                            <line x1="30" y1="60" x2="30" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="170" y1="60" x2="170" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="340" y1="60" x2="340" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="530" y1="60" x2="530" y2="76" stroke="#577590" stroke-width="2"/>
+                            <text x="100" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">1-й день</text>
+                            <text x="100" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">120</text>
+                            <text x="255" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">2-й день</text>
+                            <text x="255" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">120 · 3</text>
+                            <text x="435" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">Осталось</text>
+                            <text x="435" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">?</text>
+                        </svg>
+                    </div>
+                    <p>Во второй день увезли: <span class="math">120 · 3 = 360</span> кг.</p>
+                    <p>За два дня увезли: <span class="math">120 + 360 = 480</span> кг.</p>
+                    <p>Осталось:</p>
+                    <span class="math-line">500 – 480 = 20</span>
+                    <p>Проверка: <span class="math">120 + 360 + 20 = 500</span> — верно.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">500 – (120 + 120 · 3)</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>На складе осталось <strong>20 кг картофеля</strong>.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- ========== ЗАДАЧА 2 ========== -->
+    <div class="block">
+        <div class="block-title"><span class="badge">Задача 2</span> Модель в виде уравнения (одно неизвестное)</div>
+        <div class="example-box">
+            <p><strong>Пример:</strong></p>
+            <p>В соревнованиях по плаванию приняло участие 60 детей, причём мальчиков было в 3 раза больше, чем девочек. Сколько мальчиков и сколько девочек участвовало в соревнованиях?</p>
+            <div class="scheme">
+                <svg class="scheme-svg" width="500" height="115" viewBox="0 0 500 115" xmlns="http://www.w3.org/2000/svg">
+                    <text x="250" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">60</text>
+                    <path d="M 70 32 Q 70 22 85 20 Q 250 12 415 20 Q 430 22 430 32" fill="none" stroke="#577590" stroke-width="1.5"/>
+                    <line x1="70" y1="68" x2="430" y2="68" stroke="#577590" stroke-width="2"/>
+                    <line x1="70" y1="60" x2="70" y2="76" stroke="#577590" stroke-width="2"/>
+                    <line x1="190" y1="60" x2="190" y2="76" stroke="#577590" stroke-width="2"/>
+                    <line x1="430" y1="60" x2="430" y2="76" stroke="#577590" stroke-width="2"/>
+                    <text x="130" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">девочки</text>
+                    <text x="130" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">x</text>
+                    <text x="310" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">мальчики</text>
+                    <text x="310" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">3x</text>
+                </svg>
+            </div>
+            <div class="petersson-text">
+                <p>Пусть девочек было <span class="math">x</span>. Тогда мальчиков — <span class="math">3x</span>.</p>
+                <p>Всего детей <span class="math">x + 3x</span>, а по условию — <span class="math">60</span>.</p>
+                <p>Решаем уравнение:</p>
+                <span class="math-line">x + 3x = 60</span>
+                <span class="math-line">4x = 60</span>
+                <span class="math-line">x = 60 : 4</span>
+                <span class="math-line">x = 15</span>
+                <p>Значит, девочек <span class="math">15</span>, а мальчиков <span class="math">3 · 15 = 45</span>.</p>
+                <p>Проверка: <span class="math">15 + 45 = 60</span> — верно.</p>
+            </div>
+            <span class="model-label">Математическая модель:</span>
+            <div class="formula">x + 3x = 60</div>
+            <span class="answer-label">Ответ:</span>
+            <p>В соревнованиях участвовало <strong>15 девочек</strong> и <strong>45 мальчиков</strong>.</p>
+        </div>
+
+        <div class="etalon-wrap">
+            <div class="algorithm-frame">
+                <div class="algorithm-title">Алгоритм построения математической модели<br>текстовых задач II типа</div>
+                <div class="alg-box">Внимательно прочитать условие и вопрос задачи</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Определить взаимосвязи между описанными в<br>ней величинами (если необходимо, использовать<br>формулы, схемы, таблицы)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Проверить соответствие единиц измерения величин<br>(при необходимости выполнить их преобразование)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box blue">Обозначить неизвестную величину буквой<br>и составить уравнение</div>
+            </div>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 2.1.</span> В трёх корзинах всего 96 яблок. В первой корзине яблок в 2 раза больше, чем во второй, а в третьей — в 3 раза больше, чем во второй. Сколько яблок в каждой корзине?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <div class="scheme">
+                        <svg class="scheme-svg" width="560" height="115" viewBox="0 0 560 115" xmlns="http://www.w3.org/2000/svg">
+                            <text x="280" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">96</text>
+                            <path d="M 30 32 Q 30 22 45 20 Q 280 12 515 20 Q 530 22 530 32" fill="none" stroke="#577590" stroke-width="1.5"/>
+                            <line x1="30" y1="68" x2="530" y2="68" stroke="#577590" stroke-width="2"/>
+                            <line x1="30" y1="60" x2="30" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="170" y1="60" x2="170" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="340" y1="60" x2="340" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="530" y1="60" x2="530" y2="76" stroke="#577590" stroke-width="2"/>
+                            <text x="100" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">2-я корзина</text>
+                            <text x="100" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">x</text>
+                            <text x="255" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">1-я корзина</text>
+                            <text x="255" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">2x</text>
+                            <text x="435" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">3-я корзина</text>
+                            <text x="435" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">3x</text>
+                        </svg>
+                    </div>
+                    <p>Пусть во второй корзине <span class="math">x</span> яблок. Тогда в первой — <span class="math">2x</span>, а в третьей — <span class="math">3x</span>.</p>
+                    <p>Всего яблок <span class="math">x + 2x + 3x</span>, по условию — <span class="math">96</span>.</p>
+                    <p>Решаем уравнение:</p>
+                    <span class="math-line">x + 2x + 3x = 96</span>
+                    <span class="math-line">6x = 96</span>
+                    <span class="math-line">x = 96 : 6</span>
+                    <span class="math-line">x = 16</span>
+                    <p>Значит, во второй корзине <span class="math">16</span>, в первой — <span class="math">32</span>, в третьей — <span class="math">48</span>.</p>
+                    <p>Проверка: <span class="math">16 + 32 + 48 = 96</span> — верно.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">x + 2x + 3x = 96</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>В первой корзине <strong>32 яблока</strong>, во второй — <strong>16</strong>, в третьей — <strong>48</strong>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 2.2.</span> В трёх альбомах 112 марок. В первом альбоме марок в 2 раза меньше, чем во втором, а в третьем — на 12 марок больше, чем во втором. Сколько марок в каждом альбоме?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <div class="scheme">
+                        <svg class="scheme-svg" width="580" height="115" viewBox="0 0 580 115" xmlns="http://www.w3.org/2000/svg">
+                            <text x="290" y="14" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">112</text>
+                            <path d="M 30 32 Q 30 22 45 20 Q 290 12 535 20 Q 550 22 550 32" fill="none" stroke="#577590" stroke-width="1.5"/>
+                            <line x1="30" y1="68" x2="550" y2="68" stroke="#577590" stroke-width="2"/>
+                            <line x1="30" y1="60" x2="30" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="180" y1="60" x2="180" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="360" y1="60" x2="360" y2="76" stroke="#577590" stroke-width="2"/>
+                            <line x1="550" y1="60" x2="550" y2="76" stroke="#577590" stroke-width="2"/>
+                            <text x="105" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">1-й альбом</text>
+                            <text x="105" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">x</text>
+                            <text x="270" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">2-й альбом</text>
+                            <text x="270" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">2x</text>
+                            <text x="455" y="94" text-anchor="middle" font-size="13" font-weight="700" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">3-й альбом</text>
+                            <text x="455" y="112" text-anchor="middle" font-size="14" fill="#2c3e50" font-family="Tahoma, Arial, sans-serif">2x + 12</text>
+                        </svg>
+                    </div>
+                    <p>Пусть в первом альбоме <span class="math">x</span> марок. Тогда во втором — <span class="math">2x</span>, а в третьем — <span class="math">2x + 12</span>.</p>
+                    <p>Всего марок <span class="math">x + 2x + (2x + 12)</span>, по условию — <span class="math">112</span>.</p>
+                    <p>Решаем уравнение:</p>
+                    <span class="math-line">x + 2x + 2x + 12 = 112</span>
+                    <span class="math-line">5x + 12 = 112</span>
+                    <span class="math-line">5x = 112 – 12</span>
+                    <span class="math-line">5x = 100</span>
+                    <span class="math-line">x = 20</span>
+                    <p>Значит, в первом альбоме <span class="math">20</span>, во втором — <span class="math">40</span>, в третьем — <span class="math">52</span>.</p>
+                    <p>Проверка: <span class="math">20 + 40 + 52 = 112</span> — верно.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">x + 2x + (2x + 12) = 112</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>В первом альбоме <strong>20 марок</strong>, во втором — <strong>40</strong>, в третьем — <strong>52</strong>.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- ========== ЗАДАЧА 3 ========== -->
+    <div class="block">
+        <div class="block-title"><span class="badge">Задача 3</span> Геометрическая модель</div>
+        <div class="example-box">
+            <p><strong>Пример:</strong></p>
+            <p>Одна сторона прямоугольного участка земли на 3 м больше другой его стороны. Площадь участка равна 70 м². Найдите размеры этого участка.</p>
+
+            <div class="table-wrap">
+                <table class="math-table">
+                    <tr>
+                        <th>Длина</th>
+                        <th>Ширина</th>
+                        <th>Площадь</th>
+                    </tr>
+                    <tr>
+                        <td class="formula-cell">(x + 3) м</td>
+                        <td class="formula-cell">x м</td>
+                        <td class="formula-cell">x(x + 3) м², или 70 м²</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="petersson-text">
+                <p>Пусть ширина участка равна <span class="math">x</span> м. Тогда длина — <span class="math">(x + 3)</span> м, а площадь — <span class="math">x(x + 3)</span> м². По условию площадь равна <span class="math">70</span> м², значит:</p>
+                <div class="formula">x(x + 3) = 70</div>
+                <p>Будем подставлять вместо <span class="math">x</span> разные числа:</p>
+                <p>при <span class="math">x = 4</span>: <span class="math">4 · (4 + 3) = 28</span> — мало;</p>
+                <p>при <span class="math">x = 6</span>: <span class="math">6 · (6 + 3) = 54</span> — мало;</p>
+                <p>при <span class="math">x = 7</span>: <span class="math">7 · (7 + 3) = 70</span> — подходит!</p>
+                <p>Значит, <span class="math">x = 7</span>. Тогда ширина <span class="math">7</span> м, а длина <span class="math">7 + 3 = 10</span> м.</p>
+                <p>Но нужно проверить, нет ли других решений. Если <span class="math">x &gt; 7</span>, то <span class="math">x + 3 &gt; 10</span>, и произведение будет больше <span class="math">70</span>. Если <span class="math">x &lt; 7</span>, то произведение будет меньше <span class="math">70</span>. Значит, <span class="math">x = 7</span> — единственное решение.</p>
+                <p>Ответ: стороны участка <span class="math">7</span> м и <span class="math">10</span> м.</p>
+            </div>
+            <span class="model-label">Математическая модель:</span>
+            <div class="formula">x (x + 3) = 70</div>
+            <span class="answer-label">Ответ:</span>
+            <p>Стороны участка равны <strong>7 м и 10 м</strong>.</p>
+        </div>
+
+        <div class="etalon-wrap">
+            <div class="algorithm-frame">
+                <div class="algorithm-title">Алгоритм построения математической модели<br>текстовых задач III типа</div>
+                <div class="alg-box">Внимательно прочитать условие и вопрос задачи</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Определить взаимосвязи между описанными в<br>ней величинами (если необходимо, использовать<br>формулы, схемы, таблицы)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Проверить соответствие единиц измерения величин<br>(при необходимости выполнить их преобразование)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box pink">Обозначить неизвестные величины буквами<br>и составить уравнения</div>
+            </div>
+        </div>
+
+        <div class="alg-list">
+            <div class="alg-title">Алгоритм решения уравнений методом проб и ошибок</div>
+            <ol>
+                <li>Придать переменной любое правдоподобное значение.</li>
+                <li>Подставить его в уравнение.</li>
+                <li>Если получилось верное равенство, то перейти к пункту 4, а если нет, то вернуться к пункту 1.</li>
+                <li>Найти тем же способом остальные корни уравнения.</li>
+                <li>Доказать, что других корней нет.</li>
+                <li>Записать ответ, выписав все найденные корни.</li>
+            </ol>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 3.1.</span> Одна сторона прямоугольного участка на 4 м больше другой. Площадь участка равна 96 м². Найдите стороны участка.</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <div class="table-wrap">
+                        <table class="math-table">
+                            <tr>
+                                <th>Длина</th>
+                                <th>Ширина</th>
+                                <th>Площадь</th>
+                            </tr>
+                            <tr>
+                                <td class="formula-cell">(x + 4) м</td>
+                                <td class="formula-cell">x м</td>
+                                <td class="formula-cell">x(x + 4) м², или 96 м²</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>Пусть ширина участка равна <span class="math">x</span> м. Тогда длина — <span class="math">(x + 4)</span> м, а площадь — <span class="math">x(x + 4)</span> м². По условию площадь равна <span class="math">96</span> м², значит:</p>
+                    <div class="formula">x(x + 4) = 96</div>
+                    <p>Подставляем числа:</p>
+                    <p>при <span class="math">x = 4</span>: <span class="math">4 · 8 = 32</span> — мало;</p>
+                    <p>при <span class="math">x = 6</span>: <span class="math">6 · 10 = 60</span> — мало;</p>
+                    <p>при <span class="math">x = 8</span>: <span class="math">8 · 12 = 96</span> — подходит.</p>
+                    <p>Значит, <span class="math">x = 8</span>. Тогда ширина <span class="math">8</span> м, длина <span class="math">8 + 4 = 12</span> м.</p>
+                    <p>Других решений нет: если <span class="math">x &gt; 8</span>, произведение будет больше <span class="math">96</span>; если <span class="math">x &lt; 8</span> — меньше.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">x(x + 4) = 96</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>Стороны участка равны <strong>8 м и 12 м</strong>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 3.2.</span> Ширина прямоугольника на 5 см меньше его длины. Площадь прямоугольника равна 84 см². Найдите длину и ширину прямоугольника.</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <div class="table-wrap">
+                        <table class="math-table">
+                            <tr>
+                                <th>Длина</th>
+                                <th>Ширина</th>
+                                <th>Площадь</th>
+                            </tr>
+                            <tr>
+                                <td class="formula-cell">(x + 5) см</td>
+                                <td class="formula-cell">x см</td>
+                                <td class="formula-cell">x(x + 5) см², или 84 см²</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>Пусть ширина равна <span class="math">x</span> см. Тогда длина — <span class="math">(x + 5)</span> см, а площадь — <span class="math">x(x + 5)</span> см². По условию площадь равна <span class="math">84</span> см², значит:</p>
+                    <div class="formula">x(x + 5) = 84</div>
+                    <p>Подставляем числа:</p>
+                    <p>при <span class="math">x = 5</span>: <span class="math">5 · 10 = 50</span> — мало;</p>
+                    <p>при <span class="math">x = 7</span>: <span class="math">7 · 12 = 84</span> — подходит.</p>
+                    <p>Значит, <span class="math">x = 7</span>. Тогда ширина <span class="math">7</span> см, длина <span class="math">12</span> см.</p>
+                    <p>Других решений нет: если <span class="math">x &gt; 7</span>, произведение будет больше <span class="math">84</span>; если <span class="math">x &lt; 7</span> — меньше.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">x(x + 5) = 84</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>Длина прямоугольника равна <strong>12 см</strong>, а ширина — <strong>7 см</strong>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 3.3.</span> Одна сторона прямоугольного участка на 6 м больше другой. Площадь участка равна 112 м². Найдите стороны участка.</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <div class="table-wrap">
+                        <table class="math-table">
+                            <tr>
+                                <th>Длина</th>
+                                <th>Ширина</th>
+                                <th>Площадь</th>
+                            </tr>
+                            <tr>
+                                <td class="formula-cell">(x + 6) м</td>
+                                <td class="formula-cell">x м</td>
+                                <td class="formula-cell">x(x + 6) м², или 112 м²</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>Пусть ширина равна <span class="math">x</span> м. Тогда длина — <span class="math">(x + 6)</span> м, а площадь — <span class="math">x(x + 6)</span> м². По условию площадь равна <span class="math">112</span> м², значит:</p>
+                    <div class="formula">x(x + 6) = 112</div>
+                    <p>Подставляем числа:</p>
+                    <p>при <span class="math">x = 6</span>: <span class="math">6 · 12 = 72</span> — мало;</p>
+                    <p>при <span class="math">x = 8</span>: <span class="math">8 · 14 = 112</span> — подходит.</p>
+                    <p>Значит, <span class="math">x = 8</span>. Тогда ширина <span class="math">8</span> м, длина <span class="math">14</span> м.</p>
+                    <p>Других решений нет.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">x(x + 6) = 112</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>Стороны участка равны <strong>8 м и 14 м</strong>.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- ========== ЗАДАЧА 4 ========== -->
+    <div class="block">
+        <div class="block-title"><span class="badge">Задача 4</span> Модель с двумя переменными</div>
+        <div class="example-box">
+            <p><strong>Пример:</strong></p>
+            <p>На экскурсию едут 252 ученика. Заказали несколько одинаковых автобусов. Если заказать автобусы, вмещающие на 6 человек больше, то потребуется на 1 автобус меньше. Сколько больших автобусов надо заказать?</p>
+
+            <div class="petersson-text">
+                <p>Пусть больших автобусов <span class="math">x</span>. Тогда маленьких — <span class="math">x + 1</span>, а число детей в каждом — <span class="math">252 : x</span> и <span class="math">252 : (x + 1)</span>.</p>
+            </div>
+
+            <div class="table-wrap">
+                <table class="math-table">
+                    <tr>
+                        <th></th>
+                        <th>Количество детей<br>в одном автобусе</th>
+                        <th>Количество<br>автобусов</th>
+                        <th>Общее<br>количество детей</th>
+                    </tr>
+                    <tr>
+                        <td>Большие<br>автобусы</td>
+                        <td class="formula-cell">252 : x</td>
+                        <td class="formula-cell">x</td>
+                        <td class="formula-cell">252</td>
+                    </tr>
+                    <tr>
+                        <td>Маленькие<br>автобусы</td>
+                        <td class="formula-cell">252 : (x + 1)</td>
+                        <td class="formula-cell">x + 1</td>
+                        <td class="formula-cell">252</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="petersson-text">
+                <p>В большой автобус входит на <span class="math">6</span> детей больше, значит:</p>
+                <div class="formula">252 : x – 252 : (x + 1) = 6</div>
+                <p>Подбираем <span class="math">x</span>:</p>
+                <p>при <span class="math">x = 1</span>: <span class="math">252 : 1 – 252 : 2 = 252 – 126 = 126</span> — много;</p>
+                <p>при <span class="math">x = 2</span>: <span class="math">126 – 84 = 42</span> — много;</p>
+                <p>при <span class="math">x = 3</span>: <span class="math">84 – 63 = 21</span> — много;</p>
+                <p>при <span class="math">x = 6</span>: <span class="math">252 : 6 – 252 : 7 = 42 – 36 = 6</span> — подходит.</p>
+                <p>При <span class="math">x &gt; 6</span> разность только уменьшается, поэтому других решений нет.</p>
+            </div>
+            <span class="model-label">Математическая модель:</span>
+            <div class="formula">252 : x – 252 : (x + 1) = 6</div>
+            <span class="answer-label">Ответ:</span>
+            <p>На экскурсию надо заказать <strong>6 больших автобусов</strong>.</p>
+
+            <hr style="border: none; border-top: 2px dashed #cbd5e1; margin: 28px 0;">
+
+            <p><strong>Другой способ (через число детей в большом автобусе):</strong></p>
+            <div class="petersson-text">
+                <p>Пусть <span class="math">y</span> — число детей в большом автобусе.</p>
+            </div>
+            <div class="table-wrap">
+                <table class="math-table">
+                    <tr>
+                        <th></th>
+                        <th>Количество детей<br>в одном автобусе</th>
+                        <th>Количество<br>автобусов</th>
+                        <th>Общее<br>количество детей</th>
+                    </tr>
+                    <tr>
+                        <td>Большие<br>автобусы</td>
+                        <td class="formula-cell">y</td>
+                        <td class="formula-cell">x</td>
+                        <td class="formula-cell">252</td>
+                    </tr>
+                    <tr>
+                        <td>Маленькие<br>автобусы</td>
+                        <td class="formula-cell">y – 6</td>
+                        <td class="formula-cell">x + 1</td>
+                        <td class="formula-cell">252</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="petersson-text">
+                <p>Получаем два равенства: <span class="math">1) xy = 252</span>; <span class="math">2) (x + 1)(y – 6) = 252</span>.</p>
+                <p>Из первого равенства видно, что <span class="math">x</span> и <span class="math">y</span> — такие натуральные числа, произведение которых равно <span class="math">252</span>, причём <span class="math">y &gt; 6</span>.</p>
+                <p>Составим таблицу пар чисел, произведение которых равно <span class="math">252</span>:</p>
+            </div>
+            <div class="table-wrap">
+                <table class="math-table">
+                    <tr>
+                        <th>x</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>9</th>
+                        <th>12</th>
+                        <th>14</th>
+                        <th>18</th>
+                        <th>21</th>
+                        <th>28</th>
+                        <th>36</th>
+                    </tr>
+                    <tr>
+                        <td><strong>y</strong></td>
+                        <td>252</td>
+                        <td>126</td>
+                        <td>84</td>
+                        <td>63</td>
+                        <td>42</td>
+                        <td>36</td>
+                        <td>28</td>
+                        <td>21</td>
+                        <td>18</td>
+                        <td>14</td>
+                        <td>12</td>
+                        <td>9</td>
+                        <td>7</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="petersson-text">
+                <p>Из таблицы видно, что второму равенству удовлетворяет только пара <span class="math">x = 6</span>, <span class="math">y = 42</span>.</p>
+            </div>
+            <span class="model-label">Математическая модель (второй способ):</span>
+            <div class="formula">xy = 252; (x + 1)(y – 6) = 252</div>
+            <span class="answer-label">Ответ:</span>
+            <p>На экскурсию надо заказать <strong>6 больших автобусов</strong>.</p>
+        </div>
+
+        <div class="etalon-wrap">
+            <div class="algorithm-frame">
+                <div class="algorithm-title">Алгоритм построения математической модели<br>текстовых задач IV типа</div>
+                <div class="alg-box">Внимательно прочитать условие и вопрос задачи</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Определить взаимосвязи между описанными в<br>ней величинами (если необходимо, использовать<br>формулы, схемы, таблицы)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Проверить соответствие единиц измерения величин<br>(при необходимости выполнить их преобразование)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box green">Обозначить неизвестные величины буквами<br>и составить уравнение</div>
+            </div>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 4.1.</span> Для перевозки 180 тонн груза заказали несколько одинаковых машин. Если бы грузоподъёмность каждой машины была на 3 тонны больше, то потребовалось бы на 2 машины меньше. Сколько машин заказали?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <p>Пусть машин <span class="math">x</span>, а грузоподъёмность одной машины <span class="math">y</span> т.</p>
+                    <p>Тогда при увеличении грузоподъёмности на <span class="math">3</span> т машин нужно <span class="math">x – 2</span>, и грузоподъёмность <span class="math">y + 3</span>.</p>
+                    <div class="table-wrap">
+                        <table class="math-table">
+                            <tr>
+                                <th></th>
+                                <th>Грузоподъёмность<br>одной машины</th>
+                                <th>Количество<br>машин</th>
+                                <th>Общий<br>груз</th>
+                            </tr>
+                            <tr>
+                                <td>Обычные<br>машины</td>
+                                <td class="formula-cell">y</td>
+                                <td class="formula-cell">x</td>
+                                <td class="formula-cell">180</td>
+                            </tr>
+                            <tr>
+                                <td>Машины<br>с большей<br>грузоподъёмностью</td>
+                                <td class="formula-cell">y + 3</td>
+                                <td class="formula-cell">x – 2</td>
+                                <td class="formula-cell">180</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>Получаем: <span class="math">xy = 180</span> и <span class="math">(x – 2)(y + 3) = 180</span>.</p>
+                    <p>Подбираем пару натуральных чисел, произведение которых равно <span class="math">180</span>: подходит <span class="math">x = 12</span>, <span class="math">y = 15</span>.</p>
+                    <p>Проверка: <span class="math">12 · 15 = 180</span>; <span class="math">(12 – 2)(15 + 3) = 10 · 18 = 180</span> — верно.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">xy = 180; (x – 2)(y + 3) = 180</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>Для перевозки груза заказали <strong>12 машин</strong>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 4.2.</span> 240 туристов распределили по нескольким одинаковым палаткам. Если бы в каждую палатку помещалось на 2 человека больше, то палаток потребовалось бы на 4 меньше. Сколько палаток было изначально?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <p>Пусть палаток <span class="math">x</span>, а человек в одной палатке <span class="math">y</span>.</p>
+                    <p>Тогда при увеличении вместимости на <span class="math">2</span> человека палаток нужно <span class="math">x – 4</span>, и в каждой <span class="math">y + 2</span>.</p>
+                    <div class="table-wrap">
+                        <table class="math-table">
+                            <tr>
+                                <th></th>
+                                <th>Человек<br>в одной палатке</th>
+                                <th>Количество<br>палаток</th>
+                                <th>Всего<br>туристов</th>
+                            </tr>
+                            <tr>
+                                <td>Обычные<br>палатки</td>
+                                <td class="formula-cell">y</td>
+                                <td class="formula-cell">x</td>
+                                <td class="formula-cell">240</td>
+                            </tr>
+                            <tr>
+                                <td>Палатки<br>с большей<br>вместимостью</td>
+                                <td class="formula-cell">y + 2</td>
+                                <td class="formula-cell">x – 4</td>
+                                <td class="formula-cell">240</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>Получаем: <span class="math">xy = 240</span> и <span class="math">(x – 4)(y + 2) = 240</span>.</p>
+                    <p>Подбираем пару натуральных чисел, произведение которых равно <span class="math">240</span>: подходит <span class="math">x = 24</span>, <span class="math">y = 10</span>.</p>
+                    <p>Проверка: <span class="math">24 · 10 = 240</span>; <span class="math">(24 – 4)(10 + 2) = 20 · 12 = 240</span> — верно.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">xy = 240; (x – 4)(y + 2) = 240</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>Изначально было <strong>24 палатки</strong>.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- ========== ПРАВИЛО ВЕСОВ ========== -->
+    <div class="alg-list">
+        <div class="alg-title">Правило «весов» при решении уравнений</div>
+        Обе части уравнения можно поменять местами, можно увеличить, уменьшить, умножить или разделить на одно и то же число, отличное от нуля.
+    </div>
+
+    <!-- ========== ЗАДАЧА 5 ========== -->
+    <div class="block">
+        <div class="block-title"><span class="badge">Задача 5</span> Модель с цифрами числа (метод перебора)</div>
+        <div class="example-box">
+            <p><strong>Пример:</strong></p>
+            <p>Задумано двузначное число, которое на 52 больше произведения своих цифр. Какое число задумано?</p>
+
+            <div class="petersson-text">
+                <p>Пусть <span class="math">x</span> — цифра десятков, <span class="math">y</span> — цифра единиц. Тогда число равно <span class="math">10x + y</span>, а произведение цифр — <span class="math">xy</span>.</p>
+                <p>По условию:</p>
+                <div class="formula">10x + y = xy + 52</div>
+                <p>Правая часть больше <span class="math">52</span>, значит, и число больше <span class="math">52</span>. Поэтому <span class="math">x ≥ 5</span> — проверяем значения <span class="math">x</span> от <span class="math">5</span> до <span class="math">9</span>.</p>
+                <p>При <span class="math">x = 5</span>: <span class="math">50 + y = 5y + 52</span> — левая часть меньше правой, невозможно.</p>
+                <p>При <span class="math">x = 6</span>:</p>
+                <span class="math-line">60 + y = 6y + 52</span>
+                <span class="math-line">60 = 5y + 52</span>
+                <span class="math-line">5y = 8</span>
+                <p>— для натурального <span class="math">y</span> невозможно.</p>
+                <p>При <span class="math">x = 7</span>:</p>
+                <span class="math-line">70 + y = 7y + 52</span>
+                <span class="math-line">70 = 6y + 52</span>
+                <span class="math-line">6y = 18</span>
+                <span class="math-line">y = 3</span>
+                <p>Число <span class="math">73</span> подходит: <span class="math">73 = 7 · 3 + 52</span>.</p>
+                <p>При <span class="math">x = 8</span>:</p>
+                <span class="math-line">80 + y = 8y + 52</span>
+                <span class="math-line">80 = 7y + 52</span>
+                <span class="math-line">7y = 28</span>
+                <span class="math-line">y = 4</span>
+                <p>Число <span class="math">84</span> подходит: <span class="math">84 = 8 · 4 + 52</span>.</p>
+                <p>При <span class="math">x = 9</span>:</p>
+                <span class="math-line">90 + y = 9y + 52</span>
+                <span class="math-line">90 = 8y + 52</span>
+                <span class="math-line">8y = 38</span>
+                <p>— невозможно.</p>
+                <p>Значит, подходят числа <span class="math">73</span> и <span class="math">84</span>.</p>
+            </div>
+            <span class="model-label">Математическая модель:</span>
+            <div class="formula">10x + y = xy + 52</div>
+            <span class="answer-label">Ответ:</span>
+            <p>Задумано число <strong>73</strong> или <strong>84</strong>.</p>
+        </div>
+
+        <div class="etalon-wrap">
+            <div class="algorithm-frame">
+                <div class="algorithm-title">Алгоритм решения задач V типа<br>(метод перебора)</div>
+                <div class="alg-box">Внимательно прочитать условие и вопрос задачи</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Обозначить цифру десятков x,<br>а цифру единиц — y (1 &lt; x &lt; 9, 0 &lt; y &lt; 9)</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Записать двузначное число в виде 10x + y</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Составить уравнение по условию задачи</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Проанализировать уравнение и определить, можно<br>ли сократить множество возможных значений x</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Подставить в уравнение наименьшее из<br>значений x, требующих проверки</div>
+                <div class="alg-arrow"></div>
+                <div class="alg-box">Проверить корни, составить все возможные<br>двузначные числа и записать ответ</div>
+            </div>
+        </div>
+
+        <div class="alg-list">
+            <div class="alg-title">Алгоритм решения уравнений методом полного перебора</div>
+            <ol>
+                <li>Проанализировать уравнение и найти множество его возможных корней.</li>
+                <li>Проверить, можно ли сократить количество элементов данного множества за счёт использования свойств чисел.</li>
+                <li>Проверить для каждого из элементов составленного множества, является ли он корнем данного уравнения.</li>
+                <li>Записать ответ, выписав все найденные корни.</li>
+            </ol>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 5.1.</span> Задумано двузначное число, которое на 58 больше произведения своих цифр. Какое число задумано?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <p>Пусть <span class="math">x</span> — цифра десятков, <span class="math">y</span> — цифра единиц. Тогда:</p>
+                    <div class="formula">10x + y = xy + 58</div>
+                    <p>Правая часть больше <span class="math">58</span>, значит, <span class="math">x ≥ 6</span> — проверяем <span class="math">x = 6, 7, 8, 9</span>.</p>
+                    <p>При <span class="math">x = 6</span>:</p>
+                    <span class="math-line">60 + y = 6y + 58</span>
+                    <span class="math-line">60 = 5y + 58</span>
+                    <span class="math-line">5y = 2</span>
+                    <p>— невозможно.</p>
+                    <p>При <span class="math">x = 7</span>:</p>
+                    <span class="math-line">70 + y = 7y + 58</span>
+                    <span class="math-line">70 = 6y + 58</span>
+                    <span class="math-line">6y = 12</span>
+                    <span class="math-line">y = 2</span>
+                    <p>Число <span class="math">72</span> подходит: <span class="math">72 = 7 · 2 + 58</span>.</p>
+                    <p>При <span class="math">x = 8</span>:</p>
+                    <span class="math-line">80 + y = 8y + 58</span>
+                    <span class="math-line">80 = 7y + 58</span>
+                    <span class="math-line">7y = 22</span>
+                    <p>— невозможно.</p>
+                    <p>При <span class="math">x = 9</span>:</p>
+                    <span class="math-line">90 + y = 9y + 58</span>
+                    <span class="math-line">90 = 8y + 58</span>
+                    <span class="math-line">8y = 32</span>
+                    <span class="math-line">y = 4</span>
+                    <p>Число <span class="math">94</span> подходит: <span class="math">94 = 9 · 4 + 58</span>.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">10x + y = xy + 58</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>Задумано число <strong>72</strong> или <strong>94</strong>.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="task-item">
+            <p><span class="task-number">Задача для самостоятельного решения 5.2.</span> Задумано двузначное число, которое на 45 больше произведения своих цифр. Какое число задумано?</p>
+            <details>
+                <summary>Показать решение и ответ</summary>
+                <div class="spoiler-content">
+                    <p>Пусть <span class="math">x</span> — цифра десятков, <span class="math">y</span> — цифра единиц. Тогда:</p>
+                    <div class="formula">10x + y = xy + 45</div>
+                    <p>Правая часть больше <span class="math">45</span>, значит, <span class="math">x ≥ 5</span> — проверяем <span class="math">x = 5, 6, 7, 8, 9</span>.</p>
+                    <p>При <span class="math">x = 5</span>:</p>
+                    <span class="math-line">50 + y = 5y + 45</span>
+                    <span class="math-line">50 = 4y + 45</span>
+                    <span class="math-line">4y = 5</span>
+                    <p>— невозможно.</p>
+                    <p>При <span class="math">x = 6</span>:</p>
+                    <span class="math-line">60 + y = 6y + 45</span>
+                    <span class="math-line">60 = 5y + 45</span>
+                    <span class="math-line">5y = 15</span>
+                    <span class="math-line">y = 3</span>
+                    <p>Число <span class="math">63</span> подходит: <span class="math">63 = 6 · 3 + 45</span>.</p>
+                    <p>При <span class="math">x = 7</span>:</p>
+                    <span class="math-line">70 + y = 7y + 45</span>
+                    <span class="math-line">70 = 6y + 45</span>
+                    <span class="math-line">6y = 25</span>
+                    <p>— невозможно.</p>
+                    <p>При <span class="math">x = 8</span>:</p>
+                    <span class="math-line">80 + y = 8y + 45</span>
+                    <span class="math-line">80 = 7y + 45</span>
+                    <span class="math-line">7y = 35</span>
+                    <span class="math-line">y = 5</span>
+                    <p>Число <span class="math">85</span> подходит: <span class="math">85 = 8 · 5 + 45</span>.</p>
+                    <p>При <span class="math">x = 9</span>:</p>
+                    <span class="math-line">90 + y = 9y + 45</span>
+                    <span class="math-line">90 = 8y + 45</span>
+                    <span class="math-line">8y = 45</span>
+                    <p>— невозможно.</p>
+                    <span class="model-label">Математическая модель:</span>
+                    <div class="formula">10x + y = xy + 45</div>
+                    <span class="answer-label">Ответ:</span>
+                    <p>Задумано число <strong>63</strong> или <strong>85</strong>.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+</div>
+</body>
+</html>
